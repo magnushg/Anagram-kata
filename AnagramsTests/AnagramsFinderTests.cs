@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Specialized;
+﻿using System.Collections.Specialized;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
+using AnagramsConsoleApp;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnagramsTests
@@ -44,33 +44,6 @@ namespace AnagramsTests
 
             Assert.AreEqual(7, anagrams.Count());
 
-        }
-    }
-
-    public class AnagramsFinder
-    {
-        private readonly StringCollection _stringCollection;
-
-        public AnagramsFinder(StringCollection stringCollection)
-        {
-            _stringCollection = stringCollection;
-        }
-
-        public Dictionary<string, List<string>> Find()
-        {
-            Dictionary<string, List<string>> anagrams = new Dictionary<string, List<string>>();
-            foreach (var word in _stringCollection)
-            {
-                char[] wordInChars = word.ToCharArray();
-                Array.Sort(wordInChars);
-                string sortedWord = new string(wordInChars);
-                if(!anagrams.ContainsKey(sortedWord))
-                {
-                    anagrams.Add(sortedWord, new List<string>{word});
-                }
-                anagrams[sortedWord].Add(word);
-            }
-            return anagrams;
         }
     }
 }
