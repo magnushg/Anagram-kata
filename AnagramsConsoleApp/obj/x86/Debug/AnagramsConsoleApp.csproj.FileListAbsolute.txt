@@ -1,6 +1,0 @@
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsConsoleApp\bin\Debug\AnagramsConsoleApp.exe
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsConsoleApp\bin\Debug\AnagramsConsoleApp.pdb
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsConsoleApp\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsConsoleApp\obj\x86\Debug\AnagramsConsoleApp.exe
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsConsoleApp\obj\x86\Debug\AnagramsConsoleApp.pdb
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsConsoleApp\bin\Debug\input\wordlist.txt

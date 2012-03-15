@@ -1,8 +1,0 @@
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsTests\bin\Debug\AnagramsTests.dll
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsTests\bin\Debug\AnagramsTests.pdb
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsTests\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsTests\obj\Debug\AnagramsTests.dll
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsTests\obj\Debug\AnagramsTests.pdb
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsTests\bin\Debug\input\wordlist.txt
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsTests\bin\Debug\AnagramsConsoleApp.exe
-C:\Users\magnus.green\Dropbox\dev\Anagrams-Kata\AnagramsTests\bin\Debug\AnagramsConsoleApp.pdb
