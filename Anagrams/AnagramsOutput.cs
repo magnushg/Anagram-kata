@@ -21,7 +21,8 @@ namespace Anagrams
             {
                 AppendToAnagramsOutput(anagramGroup);
             }
-            _anagramsOutput.Append(string.Format("\r\nTotal anagrams groups: {0}", _anagrams.Count()));
+           
+            _anagramsOutput.Append(string.Format("\r\nTotal anagrams groups: {0}", _anagrams.Count(a => a.Value.Count >= 2)));
             return _anagramsOutput.ToString();
         }
 
