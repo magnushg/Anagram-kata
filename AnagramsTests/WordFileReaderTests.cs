@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using AnagramsConsoleApp;
+using Anagrams;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnagramsTests
@@ -17,7 +17,10 @@ namespace AnagramsTests
         {
             WordFileReader reader = new WordFileReader("wordlist.txt");
 
-            StringCollection words = reader.Read();
+            List<string> words = reader.Read();
+
+            Assert.IsNotNull(words);
+            Assert.IsTrue(words.Any());
         }
     }
 }

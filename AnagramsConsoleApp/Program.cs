@@ -1,21 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
+using System.IO;
 using System.Text;
+using Anagrams;
 
 namespace AnagramsConsoleApp
 {
     class Program
     {
+        private static WordFileReader _fileReader;
+        private static AnagramsFinder _anagramsFinder;
+        private static AnagramsOutput _anagramsOutput;
+        private static long _elapsedTime;
+
         static void Main(string[] args)
         {
-            var fileName = @"input/wordlist.txt";
-            WordFileReader fileReader = new WordFileReader(fileName);
-            AnagramsFinder anagramsFinder = new AnagramsFinder(fileReader.Read());
-            AnagramsOutput anagramsOutput = new AnagramsOutput(anagramsFinder.Find());
-            Console.WriteLine(anagramsOutput.Output());
+            var stopWatch = Stopwatch.StartNew();
+
+            FindAnagrams();
+
+            stopWatch.Stop();
+            _elapsedTime = stopWatch.ElapsedMilliseconds;
+
+            OutputResults();
+        }
+
+        private static void OutputResults()
+        {
+            var output = _anagramsOutput.Output();
+            WriteOutputToFile(output);
+            Console.WriteLine(output);
+            Console.WriteLine(string.Format("\r\nElapsed time with file read: {0} ms", _elapsedTime.ToString()));
             Console.ReadLine();
+        }
+
+        private static void FindAnagrams()
+        {
+            var fileName = @"input/wordlist.txt";
+            _fileReader = new WordFileReader(fileName);
+            _anagramsFinder = new AnagramsFinder(_fileReader.Read());
+            _anagramsOutput = new AnagramsOutput(_anagramsFinder.Find());
+        }
+
+        private static void WriteOutputToFile(string output)
+        {
+            using (StreamWriter writer = new StreamWriter("anagrams.txt"))
+            {
+                writer.Write(output);
+            }
         }
     }
 }

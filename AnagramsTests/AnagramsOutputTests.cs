@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AnagramsConsoleApp;
+using Anagrams;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnagramsTests
@@ -10,13 +10,13 @@ namespace AnagramsTests
     public class AnagramsOutputTests
     {
         [TestMethod]
-        public void Should_Output_Anagrams_On_One_Line_Per_Group()
+        public void Should_Output_Anagrams_On_One_Line_Per_Group_With_Anagrams_Groups_Count()
         {
             AnagramsOutput anagramsOutput = new AnagramsOutput(CreateAnagramsDictionary());
 
             string anagrams = anagramsOutput.Output();
 
-            Assert.AreEqual("kinship pinkish \r\nenlist inlets listen silent \r\n", anagrams);
+            Assert.AreEqual("kinship pinkish \r\nenlist inlets listen silent \r\n\r\nTotal anagrams groups: 2", anagrams);
         }
 
         private Dictionary<string, List<string>> CreateAnagramsDictionary()

@@ -56,9 +56,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AnagramsConsoleApp\AnagramsConsoleApp.csproj">
-      <Project>{E4942453-60FD-4F1B-8549-086F8288844F}</Project>
-      <Name>AnagramsConsoleApp</Name>
+    <ProjectReference Include="..\Anagrams\Anagrams.csproj">
+      <Project>{76626D3A-E877-4D10-A21F-AF4B2BA02DDC}</Project>
+      <Name>Anagrams</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
