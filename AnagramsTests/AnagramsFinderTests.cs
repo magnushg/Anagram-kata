@@ -67,6 +67,7 @@ namespace AnagramsTests
             Assert.AreEqual(1, anagrams.Count());
         }
 
+        [TestMethod]
         public void Should_Find_Anagrams_When_Words_Contain_White_Space()
         {
             AnagramsFinder anagramsFinder = new AnagramsFinder(new List<string>
@@ -76,7 +77,7 @@ namespace AnagramsTests
 
             var anagrams = anagramsFinder.Find();
 
-            Assert.AreEqual(4, anagrams.Count());
+            Assert.AreEqual(1, anagrams.Count());
         }
 
         private static List<string> CreateAnagramsList()
