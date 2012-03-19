@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
 
 namespace Anagrams
 {
@@ -17,8 +18,8 @@ namespace Anagrams
 
         public Dictionary<string, List<string>> Find()
         {
-          _stringCollection.ForEach(UpdateAnagramsCollection);
-          return _anagrams;
+          _stringCollection.Distinct().ToList().ForEach(UpdateAnagramsCollection);
+            return _anagrams.Where(a => a.Value.Count >= 2).ToDictionary(x => x.Key, x => x.Value);
         }
 
         private void UpdateAnagramsCollection(string word)
@@ -39,7 +40,7 @@ namespace Anagrams
 
         private static string SortCharactersAlphabetically(string word)
         {
-            char[] wordInChars = word.ToCharArray();
+            char[] wordInChars = word.ToLower().Trim().ToCharArray();
             Array.Sort(wordInChars);
             string sortedWord = new string(wordInChars);
             return sortedWord;

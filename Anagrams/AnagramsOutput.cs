@@ -17,12 +17,12 @@ namespace Anagrams
 
         public string Output()
         {
-            foreach (var anagramGroup in _anagrams.Where(anagramGroup => anagramGroup.Value.Count >= 2))
+            foreach (var anagramGroup in _anagrams)
             {
                 AppendToAnagramsOutput(anagramGroup);
             }
            
-            _anagramsOutput.Append(string.Format("\r\nTotal anagrams groups: {0}", _anagrams.Count(a => a.Value.Count >= 2)));
+            _anagramsOutput.Append(string.Format("\r\nTotal anagrams groups: {0}", _anagrams.Count()));
             return _anagramsOutput.ToString();
         }
 

@@ -30,7 +30,7 @@ namespace AnagramsTests
 
             var anagrams = anagramsFinder.Find();
 
-            Assert.AreEqual(4, anagrams.Count());
+            Assert.AreEqual(1, anagrams.Count());
         }
 
         [TestMethod]
@@ -42,11 +42,48 @@ namespace AnagramsTests
             Assert.AreEqual(7, anagrams.Count());
         }
 
+        [TestMethod]
+        public void Should_Not_Add_Duplicates_As_Anagrams()
+        {
+            AnagramsFinder anagramsFinder = new AnagramsFinder(new List<string>
+                                                                   {
+                                                                       "love", "love", "hate", "war", "hate", "peace", "raw"
+                                                                   });
+            var anagrams = anagramsFinder.Find();
+
+            Assert.AreEqual(1, anagrams.Count());
+        }
+
+        [TestMethod]
+        public void Should_Find_Anagrams_When_Words_Have_Different_Casing()
+        {
+            AnagramsFinder anagramsFinder = new AnagramsFinder(new List<string>
+                                                                   {
+                                                                       "love", "hate", "war", "peace", "Raw"
+                                                                   });
+
+            var anagrams = anagramsFinder.Find();
+
+            Assert.AreEqual(1, anagrams.Count());
+        }
+
+        public void Should_Find_Anagrams_When_Words_Contain_White_Space()
+        {
+            AnagramsFinder anagramsFinder = new AnagramsFinder(new List<string>
+                                                                   {
+                                                                       "love ", " hate", "war", " peace ", "Raw"
+                                                                   });
+
+            var anagrams = anagramsFinder.Find();
+
+            Assert.AreEqual(4, anagrams.Count());
+        }
+
         private static List<string> CreateAnagramsList()
         {
             return new List<string>
                        {
-                           "kinship", "pinkish", "enlist", "inlets", "listen", "silent", "boaster", "boaters", "borates", "fresher", "refresh", "sinks", "skins", "knits", "stink", "rots", "sort"
+                           "kinship", "pinkish", "enlist", "inlets", "listen", "silent", "boaster", "boaters", "borates", "fresher", "refresh", "sinks", "skins", "knits", "stink", "rots", "sort", "art"
                        };
         }
     }
