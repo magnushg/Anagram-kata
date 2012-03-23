@@ -17,11 +17,7 @@ namespace Anagrams
 
         public string Output()
         {
-            foreach (var words in _anagrams.Values)
-            {
-                _anagramsOutput.AppendLine(string.Join(" ", words));
-            }
-           
+            _anagrams.Values.ToList().ForEach(word => _anagramsOutput.AppendLine(string.Join(" ", word)));
             _anagramsOutput.Append(string.Format("\r\nTotal anagrams groups: {0}", _anagrams.Count()));
             return _anagramsOutput.ToString();
         }

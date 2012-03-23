@@ -33,17 +33,16 @@ namespace Anagrams
             _anagrams[sortedWord].Add(word);
         }
 
-        private bool AnagramsKeyExists(string sortedWord)
-        {
-            return !_anagrams.ContainsKey(sortedWord);
-        }
-
         private static string SortCharactersAlphabetically(string word)
         {
             char[] wordInChars = word.ToLower().Trim().ToCharArray();
             Array.Sort(wordInChars);
-            string sortedWord = new string(wordInChars);
-            return sortedWord;
+            return new string(wordInChars);
+        }
+
+        private bool AnagramsKeyExists(string sortedWord)
+        {
+            return !_anagrams.ContainsKey(sortedWord);
         }
     }
 }

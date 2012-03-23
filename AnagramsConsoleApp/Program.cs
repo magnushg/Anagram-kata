@@ -45,7 +45,7 @@ namespace AnagramsConsoleApp
 
         private static void WriteOutputToFile(string output)
         {
-            using (StreamWriter writer = new StreamWriter("anagrams.txt"))
+            using (var writer = new StreamWriter("anagrams.txt"))
             {
                 writer.Write(output);
             }
