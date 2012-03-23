@@ -17,22 +17,13 @@ namespace Anagrams
 
         public string Output()
         {
-            foreach (var anagramGroup in _anagrams)
+            foreach (var words in _anagrams.Values)
             {
-                AppendToAnagramsOutput(anagramGroup);
+                _anagramsOutput.AppendLine(string.Join(" ", words));
             }
            
             _anagramsOutput.Append(string.Format("\r\nTotal anagrams groups: {0}", _anagrams.Count()));
             return _anagramsOutput.ToString();
-        }
-
-        private void AppendToAnagramsOutput(KeyValuePair<string, List<string>> anagramGroup)
-        {
-            foreach (var word in anagramGroup.Value)
-            {
-                _anagramsOutput.Append(string.Format("{0} ", word));
-            }
-            _anagramsOutput.Append("\r\n");
         }
     }
 }

@@ -16,7 +16,7 @@ namespace AnagramsTests
 
             string anagrams = anagramsOutput.Output();
 
-            Assert.AreEqual("kinship pinkish \r\nenlist inlets listen silent \r\n\r\nTotal anagrams groups: 2", anagrams);
+            Assert.AreEqual("kinship pinkish\r\nenlist inlets listen silent\r\n\r\nTotal anagrams groups: 2", anagrams);
         }
 
         private Dictionary<string, List<string>> CreateAnagramsDictionary()
