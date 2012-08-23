@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="AnagramsFinder.cs" />
     <Compile Include="AnagramsOutput.cs" />
+    <Compile Include="IAnagramsFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordFileReader.cs" />
   </ItemGroup>

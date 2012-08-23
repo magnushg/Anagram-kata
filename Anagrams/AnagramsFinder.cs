@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Anagrams
 {
-    public class AnagramsFinder
+    public class AnagramsFinder : IAnagramsFinder
     {
         private readonly List<string> _stringCollection;
         private Dictionary<string, List<string>> _anagrams;
@@ -18,31 +18,11 @@ namespace Anagrams
 
         public Dictionary<string, List<string>> Find()
         {
-          _stringCollection.Distinct().ToList().ForEach(UpdateAnagramsCollection);
-            return _anagrams.Where(a => a.Value.Count >= 2).ToDictionary(x => x.Key, x => x.Value);
-        }
-
-        private void UpdateAnagramsCollection(string word)
-        {
-            var sortedWord = SortCharactersAlphabetically(word);
-            if (AnagramsKeyExists(sortedWord))
-            {
-                _anagrams.Add(sortedWord, new List<string> {word});
-                return;
-            }
-            _anagrams[sortedWord].Add(word);
-        }
-
-        private static string SortCharactersAlphabetically(string word)
-        {
-            char[] wordInChars = word.ToLower().Trim().ToCharArray();
-            Array.Sort(wordInChars);
-            return new string(wordInChars);
-        }
-
-        private bool AnagramsKeyExists(string sortedWord)
-        {
-            return !_anagrams.ContainsKey(sortedWord);
+          _stringCollection.Distinct()
+               .GroupBy(str => String.Concat(str.ToLower().Trim().OrderBy(c => c)))
+               .Where(g => g.Count() > 1).ToList()
+               .ForEach(g => _anagrams.Add(g.Key, g.ToList()));
+            return _anagrams;
         }
     }
 }

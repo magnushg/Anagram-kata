@@ -10,7 +10,7 @@ namespace AnagramsConsoleApp
     class Program
     {
         private static WordFileReader _fileReader;
-        private static AnagramsFinder _anagramsFinder;
+        private static IAnagramsFinder _anagramsFinder;
         private static AnagramsOutput _anagramsOutput;
         private static long _elapsedTime;
 
